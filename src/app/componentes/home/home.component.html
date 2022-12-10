@@ -1,0 +1,22 @@
+<button type="button" (click)="sair()" class="button is-link">Logout</button>
+
+<table class="table is-bordered is-striped">
+  <thead>
+  <th>Nome</th>
+  <th>Descricao</th>
+  <th>Preco</th>
+  <th>Acoes</th>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let doce of doces">
+    <td>{{doce.nome}}</td>
+    <td>{{doce.descricao}}</td>
+    <td>{{doce.preco}}</td>
+    <td class="acoes">
+      <button class="button is-link" (click)="editarDoce(doce)">Editar</button>
+      <button class="button is-danger" (click)="deletarDoce(doce)">Excluir</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

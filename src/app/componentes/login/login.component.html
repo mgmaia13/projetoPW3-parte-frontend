@@ -1,0 +1,38 @@
+<div class="container mt-5 form-login">
+  <h1 class="title">Login</h1>
+  <form [formGroup]="formLogin" (submit)="loginForm()">
+    <div class="field">
+      <label class="label">email</label>
+      <div class="control">
+        <input
+          [ngClass]="{
+          'input': true,
+          'is-success': email.valid && email.value != null,
+          'is-danger': !email.valid && email.value != null
+          }"
+          type="email" formControlName="email">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Senha</label>
+      <div class="control">
+        <input
+          [ngClass]="{
+          'input': true,
+          'is-success': senha.valid && senha.value != null,
+          'is-danger': !senha.valid && senha.value != null
+          }"
+          type="password" formControlName="senha">
+      </div>
+    </div>
+    <div class="field is-grouped">
+      <div class="control">
+        <button type="submit" class="button is-link">Login</button>
+      </div>
+      <div class="control">
+        <button type="button" routerLink="/cadastro" class="button is-success">Cadastrar</button>
+      </div>
+    </div>
+  </form>
+</div>
+
